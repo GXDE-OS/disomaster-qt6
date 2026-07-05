@@ -10,40 +10,41 @@ set(CMAKE_AUTOMOC ON)
 set(SOURCES disomaster.cpp)
 set(HEADERS disomaster.h)
 
-add_library(disomaster SHARED ${SOURCES} ${HEADERS})
+# Headers to disomaster-qt6/ so that won't conflict w/ Qt5 ver.
+add_library(disomaster6 SHARED ${SOURCES} ${HEADERS})
 
-set_target_properties(disomaster PROPERTIES
+set_target_properties(disomaster6 PROPERTIES
     VERSION 1.0.0
     SOVERSION 1
 )
 
-target_compile_definitions(disomaster PRIVATE
+target_compile_definitions(disomaster6 PRIVATE
     DISOMASTER_LIBRARY
     QT_DEPRECATED_WARNINGS
 )
 
-target_link_libraries(disomaster
+target_link_libraries(disomaster6
     PUBLIC Qt6::Core
     PRIVATE ${LIBISOBURN_LIBRARIES}
 )
 
-target_include_directories(disomaster PRIVATE ${LIBISOBURN_INCLUDE_DIRS})
+target_include_directories(disomaster6 PRIVATE ${LIBISOBURN_INCLUDE_DIRS})
 
 # ----- 安装库和头文件（供 debian 打包）-----
-install(TARGETS disomaster
+install(TARGETS disomaster6
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
 
 install(FILES ${HEADERS}
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/disomaster
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/disomaster-qt6
 )
 
 # ----- 生成并安装 disomaster.pc -----
 set(prefix      ${CMAKE_INSTALL_PREFIX})
 set(exec_prefix ${prefix})
 set(libdir      ${prefix}/${CMAKE_INSTALL_LIBDIR})
-set(includedir  ${prefix}/${CMAKE_INSTALL_INCLUDEDIR}/disomaster)
+set(includedir  ${prefix}/${CMAKE_INSTALL_INCLUDEDIR}/disomaster-qt6)
 
 # 构造 .pc 内容（文件名与 .install 中一致：disomaster.pc）
 set(PC_CONTENT "
@@ -56,7 +57,7 @@ Name: libdisomaster-qt6
 Description: Wrapper class for libisoburn
 Version: ${PROJECT_VERSION}
 Requires: libisoburn-1
-Libs: -L\${libdir} -ldisomaster
+Libs: -L\${libdir} -ldisomaster6
 Cflags: -I\${includedir}
 ")
 

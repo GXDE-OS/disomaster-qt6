@@ -1,2 +1,3 @@
 /usr/include/*
+/usr/lib/*/libdisomaster6.so
 /usr/lib/*/pkgconfig/disomaster-qt6.pc
