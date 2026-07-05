@@ -1,6 +1,10 @@
-disomaster-qt6 (1.0.0gxde1) UNRELEASED; urgency=medium
+disomaster-qt6 (1.0.0-gxde1) UNRELEASED; urgency=medium
 
+  [zeqi]
   * 迁移到cmake+Qt6
+
+  [CharOfString]
+  * 修改构建配置，使此库可以与原版的Qt5构建版共存
 
  -- zeqi <a202128502@163.com>  Sun, 05 Jul 2026 15:20:44 +0800
 
