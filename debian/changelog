@@ -1,5 +1,12 @@
+disomaster-qt6 (1.0.0gxde1) UNRELEASED; urgency=medium
+
+  * 迁移到cmake+Qt6
+
+ -- zeqi <a202128502@163.com>  Sun, 05 Jul 2026 15:20:44 +0800
+
 disomaster (0.2.0-1+comsta) unstable; urgency=low
 
   * ['Autobuild release-candidate: 78b31ee985ffe3adea2daea656e58fdbc130a823']
 
  -- shuttle <shuttle@deepin.com>  Thu, 18 Jul 2019 09:07:39 +0000
+ 

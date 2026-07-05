@@ -244,7 +244,8 @@ QString DISOMaster::getCurrentSpeed() const
 void DISOMaster::stageFiles(const QHash<QUrl, QUrl> filelist)
 {
     Q_D(DISOMaster);
-    d->files.unite(filelist);
+    // d->files.unite(filelist);
+    d->files.insert(filelist);
 }
 
 /*!

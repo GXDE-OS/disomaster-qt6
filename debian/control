@@ -1,23 +1,23 @@
-Source: disomaster
+Source: disomaster-qt6
 Section: libs
 Priority: optional
-Maintainer: Chris Xiong <chirs241097@gmail.com>
+Maintainer: zeqi <a202128502@163.com>
 Build-Depends:
  debhelper (>= 9),
  pkg-config,
- qt5-qmake,
+ cmake,
  libisoburn-dev,
- qtbase5-dev
+ qt6-base-dev
 Standards-Version: 3.9.8
-Homepage: https://github.com/linuxdeepin/disomaster
+Homepage: https://gitee.com/GXDE-OS/disomaster
 
-Package: libdisomaster
+Package: libdisomaster-qt6
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: libisoburn wrapper for Qt.
+Description: libisoburn wrapper for Qt6.
 
-Package: libdisomaster-dev
+Package: libdisomaster-qt6-dev
 Architecture: any
-Depends: libdisomaster, ${misc:Depends}
+Depends: libdisomaster-qt6, ${misc:Depends}
 Description: Development package for libdisomaster.
 
