@@ -18,6 +18,6 @@ Description: libisoburn wrapper for Qt6.
 
 Package: libdisomaster-qt6-dev
 Architecture: any
-Depends: libdisomaster-qt6, ${misc:Depends}
+Depends: libdisomaster-qt6, libisoburn-dev, ${misc:Depends}
 Description: Development package for libdisomaster.
 
