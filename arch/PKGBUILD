@@ -1,5 +1,5 @@
 # Maintainer: CharOfString <root@charofstring.cc>
-pkgname=disomaster-qt6-git
+pkgname=disomaster-qt6
 pkgver=1.0.0
 pkgrel=1
 pkgdesc='libisoburn wrapper for Qt6 (GXDE port of disomaster)'
@@ -8,8 +8,9 @@ url="https://github.com/GXDE-OS/disomaster-qt6"
 license=('GPL-3.0-or-later')
 depends=('qt6-base' 'libisoburn' 'libgcc' 'libstdc++' 'glibc')
 makedepends=('git' 'cmake' 'ninja')
-provides=("disomaster-qt6=$pkgver")
-conflicts=('disomaster-qt6')
+provides=("disomaster-qt6-git=$pkgver")
+conflicts=('disomaster-qt6-git')
+replaces=('disomaster-qt6-git')
 source=()
 sha512sums=()
 
